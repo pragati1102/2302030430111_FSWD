@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Food Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans bg-gray-100">
+
+    <!-- Main Wrapper -->
+    <div class="flex">
+
+        <!-- Sidebar (Hidden on mobile) -->
+        <div class="hidden md:block md:w-1/4 lg:w-1/5 bg-green-800 text-white p-6">
+            <h2 class="text-2xl font-bold mb-6">Food Dashboard</h2>
+            <nav>
+                <ul>
+                    <li><a href="#" class="block py-2 px-4 hover:bg-green-700">Home</a></li>
+                    <li><a href="#" class="block py-2 px-4 hover:bg-green-700">Food Items</a></li>
+                    <li><a href="#" class="block py-2 px-4 hover:bg-green-700">Add Food</a></li>
+                    <li><a href="#" class="block py-2 px-4 hover:bg-green-700">Orders</a></li>
+                    <li><a href="#" class="block py-2 px-4 hover:bg-green-700">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Mobile Sidebar (Hamburger menu) -->
+        <div class="md:hidden w-full fixed top-0 left-0 bg-green-800 text-white p-4 z-50">
+            <button class="text-white" id="hamburger-menu">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6">
+            <h1 class="text-3xl font-bold mb-6">Food Overview</h1>
+
+            <!-- Food Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Food Card 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="./Pizza.avif" alt="Pizza" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h2 class="text-xl font-semibold">Pizza</h2>
+                    <p class="text-gray-600 mt-2">Italian</p>
+                    <p class="text-gray-600">120.99</p>
+                </div>
+
+                <!-- Food Card 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="./cheeseburger.jpg" alt="Burger" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h2 class="text-xl font-semibold">Burger</h2>
+                    <p class="text-gray-600 mt-2">American</p>
+                    <p class="text-gray-600">80.99</p>
+                </div>
+
+                <!-- Food Card 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="./sushi.jpg" alt="Sushi" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h2 class="text-xl font-semibold">Sushi</h2>
+                    <p class="text-gray-600 mt-2">Japanese</p>
+                    <p class="text-gray-600">150.99</p>
+                </div>
+
+                <!-- Food Card 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="./pasta.jpg" alt="Pasta" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h2 class="text-xl font-semibold">Pasta</h2>
+                    <p class="text-gray-600 mt-2">Italian</p>
+                    <p class="text-gray-600">100.99</p>
+                </div>
+
+                <!-- Food Card 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="./Salad.jpg" alt="Salad" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h2 class="text-xl font-semibold">Salad</h2>
+                    <p class="text-gray-600 mt-2">Healthy</p>
+                    <p class="text-gray-600">90.99</p>
+                </div>
+
+                <!-- Food Card 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="./tacos.jpg" alt="Taco" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h2 class="text-xl font-semibold">Taco</h2>
+                    <p class="text-gray-600 mt-2">Mexican</p>
+                    <p class="text-gray-600">50.99</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Sidebar Menu -->
+    <div id="mobile-sidebar" class="fixed inset-0 bg-green-800 bg-opacity-75 z-40 hidden">
+        <div class="flex justify-end p-4">
+            <button class="text-white" id="close-sidebar">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="flex justify-center items-center h-full">
+            <nav>
+                <ul>
+                    <li><a href="#" class="block py-2 px-4 text-white hover:bg-green-700">Home</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-white hover:bg-green-700">Food Items</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-white hover:bg-green-700">Add Food</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-white hover:bg-green-700">Orders</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-white hover:bg-green-700">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        const hamburgerMenu = document.getElementById("hamburger-menu");
+        const mobileSidebar = document.getElementById("mobile-sidebar");
+        const closeSidebar = document.getElementById("close-sidebar");
+
+        hamburgerMenu.addEventListener("click", () => {
+            mobileSidebar.classList.remove("hidden");
+        });
+
+        closeSidebar.addEventListener("click", () => {
+            mobileSidebar.classList.add("hidden");
+        });
+    </script>
+
+</body>
+
+</html>
